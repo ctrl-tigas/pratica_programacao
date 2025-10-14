@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body onload="start()">
+    <div id="board"></div>
+    <br />
+    Line: <input type="number" min="1" max="3" id="line" /><br />
+    Column: <input type="number" min="1" max="3" id="column" /> <br />
+
+    <button onclick="play()">Mark</button> <br />
+
+    <div id="reminder">Turn - Player 1</div>
+
+    <script>
+      start();
+    </script>
+  </body>
+</html>

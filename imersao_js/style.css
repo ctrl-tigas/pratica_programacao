@@ -1,0 +1,57 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+#board table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#board td {
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 2px solid #333;
+  cursor: default;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#reminder {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0078d4;
+}
