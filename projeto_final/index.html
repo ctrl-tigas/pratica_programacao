@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fantasy Cart</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto+Slab:wght@300;400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1 class="logo">Arcanius Store</h1>
+      <p class="tagline">A pastel-tinted market for adventurers</p>
+    </header>
+
+    <main class="container">
+      <section class="products" aria-label="Products">
+        <h2>Products</h2>
+
+        <ul class="product-list">
+          <li class="product" data-id="health-potion">
+            <a class="product-link" href="products/health-potion.html">
+              <img
+                src="src/health-potion.jpg"
+                alt="Health Potion"
+                class="product-image" />
+            </a>
+            <div class="product-info">
+              <a class="product-link name" href="products/health-potion.html"
+                >Health Potion</a
+              >
+              <div class="price" data-price="5.00">$5.00</div>
+              <div class="quantity-control">
+                <button class="qty-decrease" aria-label="Decrease quantity">−</button>
+                <input
+                  class="qty-input"
+                  type="number"
+                  min="0"
+                  value="1"
+                  aria-label="Quantity" />
+                <button class="qty-increase" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="remove-product" aria-label="Remove product">Remove</button>
+            </div>
+          </li>
+
+          <li class="product" data-id="mana-potion">
+            <a class="product-link" href="products/mana-potion.html">
+              <img src="src/mana-potion.jpg" alt="Mana Potion" class="product-image" />
+            </a>
+            <div class="product-info">
+              <a class="product-link name" href="products/mana-potion.html"
+                >Mana Potion</a
+              >
+              <div class="price" data-price="4.50">$4.50</div>
+              <div class="quantity-control">
+                <button class="qty-decrease" aria-label="Decrease quantity">−</button>
+                <input
+                  class="qty-input"
+                  type="number"
+                  min="0"
+                  value="1"
+                  aria-label="Quantity" />
+                <button class="qty-increase" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="remove-product" aria-label="Remove product">Remove</button>
+            </div>
+          </li>
+
+          <li class="product" data-id="fire-rune">
+            <a class="product-link" href="products/fire-rune.html">
+              <img src="src/fire-rune.jpg" alt="Fire Rune" class="product-image" />
+            </a>
+            <div class="product-info">
+              <a class="product-link name" href="products/fire-rune.html">Fire Rune</a>
+              <div class="price" data-price="7.25">$7.25</div>
+              <div class="quantity-control">
+                <button class="qty-decrease" aria-label="Decrease quantity">−</button>
+                <input
+                  class="qty-input"
+                  type="number"
+                  min="0"
+                  value="1"
+                  aria-label="Quantity" />
+                <button class="qty-increase" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="remove-product" aria-label="Remove product">Remove</button>
+            </div>
+          </li>
+
+          <li class="product" data-id="magic-book">
+            <a class="product-link" href="products/magic-book.html">
+              <img src="src/magic-book.jpg" alt="Magic Book" class="product-image" />
+            </a>
+            <div class="product-info">
+              <a class="product-link name" href="products/magic-book.html">Magic Book</a>
+              <div class="price" data-price="12.00">$12.00</div>
+              <div class="quantity-control">
+                <button class="qty-decrease" aria-label="Decrease quantity">−</button>
+                <input
+                  class="qty-input"
+                  type="number"
+                  min="0"
+                  value="1"
+                  aria-label="Quantity" />
+                <button class="qty-increase" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="remove-product" aria-label="Remove product">Remove</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="cart" aria-label="Shopping Cart">
+        <h2>Your Cart</h2>
+
+        <ul class="cart-list"></ul>
+
+        <div class="coupon">
+          <label for="coupon-code">Coupon</label>
+          <input id="coupon-code" type="text" placeholder="Enter coupon code" />
+          <button id="apply-coupon">Apply</button>
+        </div>
+
+        <div class="summary">
+          <div class="subtotal-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+
+          <div class="discount-row" hidden>
+            <span>Discount</span>
+            <span id="discount">-$0.00</span>
+          </div>
+
+          <div class="total-row">
+            <strong>Total</strong>
+            <strong id="total">$0.00</strong>
+          </div>
+        </div>
+
+        <button class="checkout">Checkout</button>
+      </aside>
+
+      <script src="app.js" defer></script>
+    </main>
+
+    <template id="cart-item-template">
+      <li class="cart-item" data-id="">
+        <img class="cart-image" src="" alt="" />
+
+        <div class="cart-info">
+          <a class="cart-name" href="#"></a>
+
+          <div class="cart-qty">
+            <button class="cart-decrease">−</button>
+            <input class="cart-qty-input" type="number" min="0" value="1" />
+            <button class="cart-increase">+</button>
+          </div>
+
+          <div class="cart-price"></div>
+          <button class="cart-remove">Remove</button>
+        </div>
+      </li>
+    </template>
+
+    <div id="cart-announcer" aria-live="polite" class="sr-only"></div>
+
+    <footer class="site-footer">
+      <p>© 2025 Arcanius Store</p>
+    </footer>
+  </body>
+</html>
